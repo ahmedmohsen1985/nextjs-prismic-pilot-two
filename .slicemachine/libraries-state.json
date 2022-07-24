@@ -386,7 +386,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-two\\.slicemachine\\assets\\slices\\TextWithFeatures\\default\\preview.png",
+            "width": 800,
+            "height": 840
+          }
+        }
       },
       "text_with_image": {
         "library": "slices",
