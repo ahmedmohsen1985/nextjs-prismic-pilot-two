@@ -1,25 +1,21 @@
 import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
-
 import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
+import * as prismicH from "@prismicio/helpers";
 
-const Page = ({ page, navigation, settings }) => {
+const Page = ({ doc, navigation, settings }) => {
   return (
     <Layout
-      alternateLanguages={page.alternate_languages}
+      altLangs={doc.alternate_languages}
       navigation={navigation}
       settings={settings}
     >
       <Head>
-        <title>
-          {prismicH.asText(page.data.title)} |{" "}
-          {prismicH.asText(settings.data.siteTitle)}
-        </title>
+        <title>{prismicH.asText(doc.data.title)}</title>
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+      <SliceZone slices={doc.data.slices} components={components} />
     </Layout>
   );
 };
@@ -35,7 +31,7 @@ export async function getStaticProps({ params, locale, previewData }) {
 
   return {
     props: {
-      page,
+      doc: page,
       navigation,
       settings,
     },

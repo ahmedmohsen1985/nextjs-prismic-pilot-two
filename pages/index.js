@@ -6,17 +6,17 @@ import { createClient } from "../prismicio";
 import { components } from "../slices/";
 import { Layout } from "../components/Layout";
 
-const Index = ({ page, navigation, settings }) => {
+const Index = ({ doc, navigation, settings }) => {
   return (
     <Layout
-      alternateLanguages={page.alternate_languages}
+      altLangs={doc.alternate_languages}
       navigation={navigation}
       settings={settings}
     >
       <Head>
-        <title>{prismicH.asText(page.data.title)}</title>
+        <title>{prismicH.asText(doc.data.title)}</title>
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+      <SliceZone slices={doc.data.slices} components={components} />
     </Layout>
   );
 };
@@ -32,7 +32,7 @@ export async function getStaticProps({ locale, previewData }) {
 
   return {
     props: {
-      page,
+      doc: page,
       navigation,
       settings,
     },
