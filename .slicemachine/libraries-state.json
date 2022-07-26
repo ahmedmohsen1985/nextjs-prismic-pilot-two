@@ -1,6 +1,82 @@
 {
   "slices": {
     "components": {
+      "form": {
+        "library": "slices",
+        "id": "form",
+        "name": "Form",
+        "description": "Form",
+        "model": {
+          "id": "form",
+          "type": "SharedSlice",
+          "name": "Form",
+          "description": "Form",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Form",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "form",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Grow rich metrics",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Velit non incididunt proident id deserunt enim esse do labore occaecat dolor.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-two\\.slicemachine\\assets\\slices\\Form\\default\\preview.png",
+            "width": 800,
+            "height": 48
+          }
+        }
+      },
       "hero": {
         "library": "slices",
         "id": "hero",

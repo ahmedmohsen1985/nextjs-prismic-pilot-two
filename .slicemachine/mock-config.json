@@ -128,6 +128,7 @@
       "withButton": {
         "primary": {}
       }
-    }
+    },
+    "Form": {}
   }
 }
