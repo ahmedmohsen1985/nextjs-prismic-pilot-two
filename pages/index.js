@@ -8,10 +8,33 @@ import { Layout } from "../components/Layout";
 
 import React from 'react';
 import { formium } from '../lib/formium';
-import { FormiumForm } from '@formium/react';
+import { FormiumForm, defaultComponents } from '@formium/react';
+
+function TextInput(props) {
+   return <input {...props} className="w-full rounded border border-slate-500 bg-slate-600 py-3 pl-3 pr-10 text-white placeholder-slate-400" />
+   
+}
+
+function SubmitButton(props) {
+  return <button {...props} className="btn-primary" ></button>  
+}
+
+function FieldWrapper(props) {
+  return <div {...props} className="pt-3 pb-3" ></div>  
+}
+
+
+const customForm = {
+   ...defaultComponents,
+   TextInput,
+   SubmitButton,
+   FieldWrapper,
+}
+
+
 
 const Index = ({ doc, navigation, settings, form }) => {
-
+  
   const [success, setSuccess] = React.useState(false);
   if (success) {
     return <div>Thank you! Your response has been recorded.</div>;
@@ -29,13 +52,18 @@ const Index = ({ doc, navigation, settings, form }) => {
       </Head>
       
       <SliceZone slices={doc.data.slices} components={components} />
-      <div className="flex justify-center pt-36 pb-36">
-          <FormiumForm data={form}
-            onSubmit={async (values) => {
-              await formium.submitForm('registration-form', values);
-              setSuccess(true);
-            }}
-          />
+      <div className="flex justify-center pt-36 pb-36 formContainer">
+          <div className="w-2/4">
+            <h1>Contact Us</h1>
+            <FormiumForm 
+              components={customForm}
+              data={form}
+              onSubmit={async (values) => {
+                await formium.submitForm('registration-form', values);
+                setSuccess(true);
+              }}
+            />
+          </div>
       </div>
     </Layout>
   );
