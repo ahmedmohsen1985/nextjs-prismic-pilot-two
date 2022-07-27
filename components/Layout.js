@@ -5,10 +5,10 @@ import { Footer } from "./Footer";
 
 export const Layout = ({
   altLangs,
+  currentLang,
   navigation,
   settings,
   children,
-  currentLang,
   
 }) => {
   return (

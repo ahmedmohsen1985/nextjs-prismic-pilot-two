@@ -19,6 +19,7 @@ const nextConfig = async () => {
       // a non-locale prefixed path e.g. `/hello`
       defaultLocale: locales[0],
     },
+    
     images: {
       loader: "imgix",
       path: "",

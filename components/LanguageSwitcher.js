@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 // };
 
 
+
 export const LanguageSwitcher = ({ altLangs = [], currentLang}) => {
 
   const router = useRouter()
@@ -22,9 +23,15 @@ export const LanguageSwitcher = ({ altLangs = [], currentLang}) => {
     })
   }
 
+  // const langNames = {
+  //   "en-US": "English",
+  //   "ar-eg": "Arabic",
+  //   "fr-fr": "French",
+  // }
+
   return (
     <li>
-      <select name="languages" onChange={onSelectChange}>
+      <select name="languages" className='border border-slate-300 rounded-lg w-36 h-10 pl-2 pr-2' onChange={onSelectChange}>
         <option value={currentLang}>{currentLang}</option>
         {altLangs.map((altLang) => (
           <option key={altLang.lang} value={altLang.lang}>

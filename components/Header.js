@@ -19,9 +19,9 @@ export const Header = ({ altLangs, navigation, settings, currentLang }) => {
             {navigation.data?.links.map((item) => (
               <li
                 key={prismicH.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800"
+                className="font-semibold tracking-tight text-slate-800 flex place-items-center"
               >
-                <PrismicLink field={item.link}>
+                <PrismicLink field={item.link} className='block'>
                   <PrismicText field={item.label} />
                 </PrismicLink>
               </li>
