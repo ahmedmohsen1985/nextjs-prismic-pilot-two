@@ -28,11 +28,17 @@
   margin-bottom: 2rem;
 }
 .formContainer label{
-  font-size: 1rem;
+  font-size: 13px;
   font-weight: 100;
   margin-bottom: 0.5rem;
   display:block;
 }
 .formContainer input:focus{
   outline: none;
+}
+
+.customInput div div:last-child{
+  font-size: 12px;
+  margin-top: 5px;
+  color: red;
 }
