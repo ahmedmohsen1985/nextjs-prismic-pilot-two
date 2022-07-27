@@ -25,7 +25,7 @@ export const LanguageSwitcher = ({ altLangs = [], currentLang }) => {
     <li>
       <div className="dropdown dropdown-hover">
         <label className="btn m-1"><LangIcon lang={currentLang} /></label>
-        <ul className="menu dropdown-content p-1 shadow bg-base-100 rounded-box bg-zinc-100" onChange={onSelectChange}>
+        <ul className="menu dropdown-content p-1 shadow rounded-box bg-zinc-100" onChange={onSelectChange}>
           {altLangs.map((altLang) => (
             <li key={altLang.lang} >
               <PrismicLink href={linkResolver(altLang)} locale={altLang.lang} className='text-center'>
