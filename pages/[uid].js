@@ -9,6 +9,7 @@ const Page = ({ doc, navigation, settings }) => {
   return (
     <Layout
       altLangs={doc.alternate_languages}
+      currentLang={doc.lang}
       navigation={navigation}
       settings={settings}
     >

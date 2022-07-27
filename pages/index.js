@@ -43,6 +43,7 @@ const Index = ({ doc, navigation, settings, form }) => {
   return (
     <Layout
       altLangs={doc.alternate_languages}
+      currentLang={doc.lang}
       navigation={navigation}
       settings={settings}
     >

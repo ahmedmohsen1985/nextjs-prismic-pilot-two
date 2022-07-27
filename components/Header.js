@@ -5,7 +5,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Bounded } from "./Bounded";
 
 
-export const Header = ({ altLangs, navigation, settings }) => {
+export const Header = ({ altLangs, navigation, settings, currentLang }) => {
   return (
     <Bounded as="header" yPadding="sm">
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
@@ -26,7 +26,7 @@ export const Header = ({ altLangs, navigation, settings }) => {
                 </PrismicLink>
               </li>
             ))}
-            <LanguageSwitcher altLangs={altLangs} />
+            <LanguageSwitcher altLangs={altLangs} currentLang={currentLang} />
           </ul>
         </nav>
       </div>

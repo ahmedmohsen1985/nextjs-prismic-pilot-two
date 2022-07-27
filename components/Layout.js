@@ -8,12 +8,14 @@ export const Layout = ({
   navigation,
   settings,
   children,
+  currentLang,
   
 }) => {
   return (
     <div className="text-slate-800">
       <Header
         altLangs={altLangs}
+        currentLang={currentLang}
         navigation={navigation}
         settings={settings}
       />
