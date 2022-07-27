@@ -9,12 +9,6 @@ const LangIcon = ({ lang }) => {
   return <span className={`fi fi-${code}`} />;
 };
 
-// const langNames = ({ lang })=> {
-//   if (lang === "en-us") { return "English" };
-//   if (lang === "ar-eg") { return "Arabic" };
-//   if (lang === "fr-fr") { return "French" };
-// }
-
 export const LanguageSwitcher = ({ altLangs = [], currentLang }) => {
 
   const router = useRouter()
@@ -26,9 +20,7 @@ export const LanguageSwitcher = ({ altLangs = [], currentLang }) => {
       scroll: false
     })
   }
-
-
-
+  
   return (
     <li>
       <div className="dropdown dropdown-hover">
@@ -48,29 +40,5 @@ export const LanguageSwitcher = ({ altLangs = [], currentLang }) => {
   );
 };
 
-
-
-// <li>
-//   <select name="languages" onChange={onSelectChange}>
-//     {altLangs.map((altLang) => (
-//       <option key={altLang.lang} value={altLang.lang}>
-//         {altLang.lang}
-//       </option>
-//     ))}
-//   </select>
-// </li>
-
-//   <ul className="-ml-4 -mt-4 flex flex-wrap">
-//   {altLangs.map((altLang) => {
-//     return (
-//       <li key={altLang.lang}  className="pl-4 pt-4">
-//         <PrismicLink href={linkResolver(altLang)} locale={altLang.lang}>
-//           <span className="sr-only">{altLang.lang}</span>
-//           <LangIcon lang={altLang.lang} />
-//         </PrismicLink>
-//       </li>
-//     );
-//   })}
-// </ul>
 
 export default LanguageSwitcher;
