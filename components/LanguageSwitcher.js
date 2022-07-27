@@ -1,17 +1,21 @@
 import { useRouter } from 'next/router'
 
-// import { PrismicLink } from "@prismicio/react";
-// import { linkResolver } from "../prismicio";
+import { PrismicLink } from "@prismicio/react";
+import { linkResolver } from "../prismicio";
 
 
-// const LangIcon = ({ lang }) => {
-//   const code = lang.substring(3).toLowerCase();
-//   return <span className={`fi fi-${code}`} />;
-// };
+const LangIcon = ({ lang }) => {
+  const code = lang.substring(3).toLowerCase();
+  return <span className={`fi fi-${code}`} />;
+};
 
+// const langNames = ({ lang })=> {
+//   if (lang === "en-us") { return "English" };
+//   if (lang === "ar-eg") { return "Arabic" };
+//   if (lang === "fr-fr") { return "French" };
+// }
 
-
-export const LanguageSwitcher = ({ altLangs = [], currentLang}) => {
+export const LanguageSwitcher = ({ altLangs = [], currentLang }) => {
 
   const router = useRouter()
 
@@ -23,25 +27,28 @@ export const LanguageSwitcher = ({ altLangs = [], currentLang}) => {
     })
   }
 
-  // const langNames = {
-  //   "en-US": "English",
-  //   "ar-eg": "Arabic",
-  //   "fr-fr": "French",
-  // }
+
 
   return (
     <li>
-      <select name="languages" className='border border-slate-300 rounded-lg w-36 h-10 pl-2 pr-2' onChange={onSelectChange}>
-        <option value={currentLang}>{currentLang}</option>
-        {altLangs.map((altLang) => (
-          <option key={altLang.lang} value={altLang.lang}>
-            {altLang.lang}
-          </option>
-        ))}
-      </select>
+      <div className="dropdown dropdown-hover">
+        <label className="btn m-1"><LangIcon lang={currentLang} /></label>
+        <ul className="menu dropdown-content p-1 shadow bg-base-100 rounded-box bg-zinc-100" onChange={onSelectChange}>
+          {altLangs.map((altLang) => (
+            <li key={altLang.lang} >
+              <PrismicLink href={linkResolver(altLang)} locale={altLang.lang} className='text-center'>
+                <span className="sr-only">{altLang.lang}</span>
+                <LangIcon lang={altLang.lang} className='m-auto m-0' />
+              </PrismicLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </li>
   );
 };
+
+
 
 // <li>
 //   <select name="languages" onChange={onSelectChange}>
